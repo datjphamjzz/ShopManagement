@@ -20,6 +20,7 @@ public:
 class Buyer {
 	fstream f;
 public:
+	void display();
 	void addItem();
 	void removeItem();
 	int bill();
