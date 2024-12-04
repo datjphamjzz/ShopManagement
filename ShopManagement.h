@@ -12,7 +12,6 @@ struct Item {
 class Shop {
 	fstream f;
 public:
-	void getData();
 	void addItem();
 	void removeItem();
 };
