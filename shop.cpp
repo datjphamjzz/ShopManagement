@@ -31,3 +31,16 @@ void Shop::addItem() {
 
 	f.close();
 }
+
+void Shop::removeItem() {
+	cout << "Enter the ID: ";
+	int ID;
+	cin >> ID;
+
+	fstream f1("database.txt", ios::in | ios::binary);
+	fstream f2("tmp.txt", ios::out | ios::binary);
+
+	if (f1.is_open() && f2.is_open()) {
+
+	}
+}
