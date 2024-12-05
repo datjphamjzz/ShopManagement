@@ -164,30 +164,38 @@ void Shop::modifyItem() {
 		while (f1.read((char*)&i, sizeof(Item))) {
 			if (i.ID == ID) {
 				printItem(i);
-				cout << "New ID: " << endl;
+				cout << "New ID: ";
 				cin >> i.ID;
-				cout << "New name: " << endl;
-				cin >> i.name;
-				cout << "New price: " << endl;
+				cin.ignore();
+				cout << "New name: ";
+				cin.get(i.name, 20, '\n');
+				cin.ignore();
+				cout << "New price: ";
 				cin >> i.price;
 
-				f2.write((char*)&i, sizeof(Item));
-
-				cout << "Modified successfully" << endl;
-				return;
+				found = true;
 			}
-			else f2.write((char*)&i, sizeof(Item));
+			f2.write((char*)&i, sizeof(Item));
 		}
-
-		if(!found) cout << "Not found item" << endl;
 
 		f1.close();
 		f2.close();
 
-		delete("database.txt");
-		rename("tmp.txt", "database.txt");
+		if (found) {
+			remove("database.txt");
+			rename("tmp.txt", "database.txt");
+			cout << "Modified successfully" << endl;
+		}
+		else {
+			remove("tmp.txt");
+			cout << "Item with ID " << ID << " not found" << endl;
+		}
 	}
-	else cout << "Error when opening file" << endl;
+	else {
+		cout << "Error when opening file" << endl;
+	}
 }
+
+
 
 
