@@ -23,9 +23,9 @@ public:
 class Buyer {
 public:
 	void display();
-	void menu();
 	void addItem();
 	void removeItem();
+	void modify();
 	int bill();
 };
 
