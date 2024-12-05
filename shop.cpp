@@ -87,6 +87,7 @@ void Shop::addItem() {
 		cin >> i.price;
 
 		f.write((char*)&i, sizeof(Item));
+		f.close();
 	}
 	else cout << "Error" << endl;
 
