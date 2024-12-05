@@ -22,6 +22,7 @@ public:
 
 class Buyer {
 public:
+	void menu();
 	void addItem();
 	void removeItem();
 	int bill();
@@ -30,5 +31,6 @@ public:
 class Menu {
 	Shop s;
 	Buyer b;
-
+public:
+	void menu();
 };
