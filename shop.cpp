@@ -180,8 +180,12 @@ void Shop::modifyItem() {
 		}
 
 		if(!found) cout << "Not found item" << endl;
+
 		f1.close();
 		f2.close();
+
+		delete("database.txt");
+		rename("tmp.txt", "database.txt");
 	}
 	else cout << "Error when opening file" << endl;
 }
