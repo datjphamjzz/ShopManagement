@@ -18,7 +18,7 @@ void Menu::menu() {
 		menu();
 		break;
 	case 2:
-		// b.menu();
+		b.menu();
 		menu();
 		break;
 	case 3:

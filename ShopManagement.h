@@ -22,9 +22,12 @@ public:
 
 class Buyer {
 public:
+	void menu();
+	void display();
 	void addItem();
 	void removeItem();
-	int bill();
+	void modify();
+	void displaycart();
 };
 
 class Menu {
