@@ -67,7 +67,7 @@ void Shop::displayItems() {
 
 void Shop::addItem() {
 	fstream f;
-	f.open("database.txt", ios::out | ios::binary);
+	f.open("database.txt", ios::out | ios:: app |ios::binary);
 	if (f.is_open()) {
 		Item i;
 
