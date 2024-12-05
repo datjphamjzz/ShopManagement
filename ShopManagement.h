@@ -5,7 +5,7 @@ using namespace std;
 
 struct Item {
 	int ID;
-	char* name;
+	char name[20];
 	float price;
 };
 

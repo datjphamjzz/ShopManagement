@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <cstring>
+#include <string>
 using namespace std;
 
 #include "ShopManagement.h"
@@ -74,14 +74,10 @@ void Shop::addItem() {
 		cout << "ID: ";
 		cin >> i.ID;
 		cin.ignore();
-
-		char* tmpName = new char[100];
+		
 		cout << "Name: ";
-		cin.get(tmpName, 100, '\n');
+		cin.get(i.name, 20, '\n');
 		cin.ignore();
-		i.name = new char[strlen(tmpName) + 1];
-		strcpy_s(i.name, strlen(tmpName) + 1, tmpName);
-		delete[] tmpName;
 
 		cout << "Price: ";
 		cin >> i.price;
@@ -132,7 +128,6 @@ void Shop::removeItem() {
 		cout << "Error when opening file" << endl;
 	}
 }
-
 
 void Shop::findItem() {
 	cout << "ID: ";
