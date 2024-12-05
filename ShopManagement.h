@@ -5,7 +5,7 @@ using namespace std;
 
 struct Item {
 	int ID;
-	char* name;
+	char name[20];
 	float price;
 };
 
@@ -34,4 +34,8 @@ class Menu {
 	Buyer b;
 public:
 	void menu();
+	Menu(Shop s, Buyer b) {
+		this->s = s;
+		this->b = b;
+	}
 };
