@@ -53,7 +53,7 @@ void Shop::printItem(Item i) {
 }
 
 void Shop::displayItems() {
-	fstream f("database.bin", ios::in | ios::binary);
+	fstream f("database.txt", ios::in | ios::binary);
 
 	if (f.is_open()) {
 		Item i;
@@ -67,7 +67,7 @@ void Shop::displayItems() {
 
 void Shop::addItem() {
 	fstream f;
-	f.open("database.bin", ios::out | ios::binary);
+	f.open("database.txt", ios::out | ios::binary);
 	if (f.is_open()) {
 		Item i;
 
@@ -98,8 +98,8 @@ void Shop::removeItem() {
 	int ID;
 	cin >> ID;
 
-	fstream f1("database.bin", ios::in | ios::binary);
-	fstream f2("tmp.bin", ios::out | ios::binary);
+	fstream f1("database.txt", ios::in | ios::binary);
+	fstream f2("tmp.txt", ios::out | ios::binary);
 
 	if (f1.is_open() && f2.is_open()) {
 		Item i;
@@ -113,8 +113,8 @@ void Shop::removeItem() {
 		f1.close();
 		f2.close();
 
-		delete("database.bin");
-		rename("tmp.bin", "database.bin");
+		delete("database.txt");
+		rename("tmp.txt", "database.txt");
 
 		if (found) cout << "Removed successfully" << endl;
 		else cout << "Not found item" << endl;
@@ -127,7 +127,7 @@ void Shop::findItem() {
 	int ID;
 	cin >> ID;
 
-	fstream f("database.bin", ios::in | ios::binary);
+	fstream f("database.txt", ios::in | ios::binary);
 
 	if (f.is_open()) {
 		Item i;
@@ -148,8 +148,8 @@ void Shop::modifyItem() {
 	int ID;
 	cin >> ID;
 
-	fstream f1("database.bin", ios::in | ios::binary);
-	fstream f2("tmp.bin", ios::out | ios::binary);
+	fstream f1("database.txt", ios::in | ios::binary);
+	fstream f2("tmp.txt", ios::out | ios::binary);
 
 	if (f1.is_open() && f2.is_open()) {
 		Item i;
