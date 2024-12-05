@@ -10,14 +10,15 @@ struct Item {
 };
 
 class Shop {
-	fstream f;
 public:
+	void printItem(Item i);
+	void displayItems();
 	void addItem();
 	void removeItem();
+	void findItem();
 };
 
 class Buyer {
-	fstream f;
 public:
 	void addItem();
 	void removeItem();
