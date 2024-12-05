@@ -85,7 +85,7 @@ void Shop::addItem() {
 		f.write((char*)&i, sizeof(Item));
 		f.close();
 	}
-	else cout << "Error" << endl;
+	else cout << "Error when opening file" << endl;
 
 	f.close();
 }
