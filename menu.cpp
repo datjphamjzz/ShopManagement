@@ -25,5 +25,4 @@ void Menu::menu() {
 		break;
 	default:
 		cout << "Invalid choice" << endl;
-	}
 }

@@ -22,7 +22,6 @@ public:
 
 class Buyer {
 public:
-	void menu();
 	void addItem();
 	void removeItem();
 	int bill();
@@ -33,4 +32,8 @@ class Menu {
 	Buyer b;
 public:
 	void menu();
+	Menu(Shop s, Buyer b) {
+		this->s = s;
+		this->b = b;
+	}
 };
