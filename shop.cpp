@@ -107,21 +107,32 @@ void Shop::removeItem() {
 		bool found = false;
 
 		while (f1.read((char*)&i, sizeof(Item))) {
-			if (i.ID != ID) f2.write((char*)&i, sizeof(Item));
-			else found = true;
+			if (i.ID != ID) {
+				f2.write((char*)&i, sizeof(Item));
+			}
+			else {
+				found = true;
+			}
 		}
 
 		f1.close();
 		f2.close();
 
-		delete("database.txt");
-		rename("tmp.txt", "database.txt");
-
-		if (found) cout << "Removed successfully" << endl;
-		else cout << "Not found item" << endl;
+		if (found) {
+			remove("database.txt");
+			rename("tmp.txt", "database.txt");
+			cout << "Removed successfully" << endl;
+		}
+		else {
+			remove("tmp.txt");
+			cout << "Item with ID " << ID << " not found" << endl;
+		}
 	}
-	else cout << "Error when opening file" << endl;
+	else {
+		cout << "Error when opening file" << endl;
+	}
 }
+
 
 void Shop::findItem() {
 	cout << "ID: ";
