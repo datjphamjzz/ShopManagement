@@ -10,18 +10,26 @@ struct Item {
 };
 
 class Shop {
-	fstream f;
 public:
-	void getData();
+	void menu();
+	void printItem(Item i);
+	void displayItems();
 	void addItem();
 	void removeItem();
+	void findItem();
+	void modifyItem();
 };
 
 class Buyer {
-	fstream f;
 public:
 	void display();
 	void addItem();
 	void removeItem();
 	int bill();
+};
+
+class Menu {
+	Shop s;
+	Buyer b;
+
 };
